@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<configuration>
+    <title>GIS LINGKUNGAN HIDUP DEMAK</title>
+    <logo>assets/images/logo.png</logo>
+    <style>
+        <colors>0x333333,0x99ffcc,0xffffab,0xeaea9d,0x333333</colors>
+        <alpha>0.31000000000000005</alpha>
+        <font name="Calibri Light"/>
+        <titlefont name="Candara"/>
+        <subtitlefont name="Verdana"/>
+    </style>
+    <!-- replace the following url with your own geometryservice -->
+    <geometryservice url="http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer"/>
+    <widget url="widgets/Navigation/NavigationWidget.swf" config="widgets/Navigation/NavigationWidget.xml" left="10" top="50"/>
+    <widget url="widgets/HeaderController/HeaderControllerWidget.swf" config="widgets/HeaderController/HeaderControllerWidget.xml" left="0" top="0"/>
+    <widget url="widgets/Coordinate/CoordinateWidget.swf" config="widgets/Coordinate/CoordinateWidget.xml" label="Coordinate" left="3" bottom="1"/>
+    <widget url="widgets/MapSwitcher/MapSwitcherWidget.swf" config="widgets/MapSwitcher/MapSwitcherWidget.xml" label="Map Switcher" right="20" top="55"/>
+    <map attributionvisible="false" esrilogovisible="true" openhandcursorvisible="false" scalebarvisible="true" scalebar="default" zoomslidervisible="false" wraparound180="true" addarcgisbasemaps="true" initialextent="12253181.555927835 -808391.5900584963 12381442.889390409 -736693.6575269735" wkid="102100" top="40" portalurl="https://www.arcgis.com/">
+        <basemaps>
+            <layer type="kml" label="maps" url="https://www.google.co.id/maps" visible="true"/>
+        </basemaps>
+        <operationallayers>
+            <layer type="feature" label="Abrasi" url="http://localhost:6080/arcgis/rest/services/gisdemak/MapServer/3" mode="onDemand" visible="true"/>
+            <layer type="feature" label="Akresi" url="http://localhost:6080/arcgis/rest/services/gisdemak/MapServer/2" mode="onDemand" visible="true"/>
+            <layer type="feature" label="Kerusakan Tanah" copyright="" url="http://localhost:6080/arcgis/rest/services/gisdemak/MapServer/1" popupconfig="popups/PopUp_2.xml" mode="onDemand" visible="true"/>
+            <layer type="feature" label="Rob" copyright="" url="http://localhost:6080/arcgis/rest/services/gisdemak/MapServer/0" popupconfig="popups/PopUp_3.xml" mode="onDemand" visible="true"/>
+        </operationallayers>
+    </map>
+    <widgetcontainer layout="float"/>
+    <widgetcontainer paneltype="bottom" initialstate="open">
+        <widget url="widgets/AttributeTable/AttributeTableWidget.swf" config="widgets/AttributeTable/AttributeTableWidget.xml" label="Attribute Table" icon="assets/images/TableOpen32.png"/>
+    </widgetcontainer>
+</configuration>
